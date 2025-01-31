@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Crocodile Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid #4caf50;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Crocodile Facts</h1>
+        <p id="fact"></p>
+        <button id="factButton">Show Random Fact</button>
+    </div>
+    <script>
+        const crocodileFacts = [
+            {
+                "fact": "Ancient Species",
+                "description": "Crocodiles have been around for over 200 million years, making them one of the oldest living species on Earth."
+            },
+            {
+                "fact": "Cold-Blooded Reptiles",
+                "description": "Crocodiles are ectothermic (cold-blooded), meaning they rely on external sources to regulate their body temperature."
+            },
+            {
+                "fact": "Strong Bite Force",
+                "description": "They have one of the strongest bite forces in the animal kingdom, capable of exerting over 3,700 pounds of pressure per square inch."
+            },
+            {
+                "fact": "Excellent Swimmers",
+                "description": "Crocodiles can swim at speeds of up to 20 miles per hour (32 km/h) in short bursts, thanks to their powerful tails."
+            },
+            {
+                "fact": "Unique Eyes",
+                "description": "Their eyes have a special membrane that allows them to see clearly underwater while protecting their eyes from debris."
+            },
+            {
+                "fact": "Social Behavior",
+                "description": "Contrary to popular belief, crocodiles can exhibit social behaviors and often communicate with each other through vocalizations."
+            },
+            {
+                "fact": "Parental Care",
+                "description": "Female crocodiles are known to exhibit parental care, guarding their nests and helping hatchlings reach the water."
+            },
+            {
+                "fact": "Diet",
+                "description": "Crocodiles are carnivorous and primarily feed on fish, birds, and mammals. They can go for long periods without eating, sometimes up to several months."
+            },
+            {
+                "fact": "Habitat",
+                "description": "They are found in a variety of habitats, including rivers, lakes, wetlands, and even some saltwater environments."
+            },
+            {
+                "fact": "Conservation Status",
+                "description": "Many crocodile species are threatened or endangered due to habitat loss, hunting, and climate change, leading to conservation efforts to protect them."
+            }
+        ];
+
+        document.getElementById('factButton').addEventListener('click', function() {
+            const randomIndex = Math.floor(Math.random() * crocodileFacts.length);
+            const randomFact = crocodileFacts[randomIndex];
+            document.getElementById('fact').innerText = `${randomFact.fact}: ${randomFact.description}`;
+        });
+    </script>
+</body>
+</html>
